@@ -716,3 +716,8 @@ main[hidden]{display:none}
 .textseite{padding-block:56px 100px}
 .textseite h1{font-size:clamp(32px,4vw,52px);margin-bottom:28px}
 .textseite p{max-width:62ch}
+.textseite h2{margin:52px 0 14px;font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:clamp(20px,1.8vw,24px);line-height:1.2;max-width:40ch}
+.textseite p{margin:0 0 16px}
+.textseite a{text-underline-offset:3px;text-decoration-color:var(--laerche-tief)}
+.ds-lead{font-size:20px;line-height:1.55}
+.ds-stand{margin-top:48px!important;font-family:var(--f-display);font-size:14px;color:var(--text-dunkel-2)}

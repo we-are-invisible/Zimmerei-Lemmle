@@ -7,7 +7,7 @@ public/                     alles, was online geht
   index.html                Startseite
   baustellen/index.html     /baustellen/
   jobs/index.html           /jobs/ (Bewerbung)
-  datenschutz/index.html    /datenschutz/ (Text fehlt noch)
+  datenschutz/index.html    /datenschutz/
   assets/                   style.css, start.js, baustellen.js, jobs.js
   bilder/                   Fotos
   fonts/                    Schriften lokal (kein Google-Server, DSGVO)
@@ -60,7 +60,7 @@ Die Umstellung braucht ein paar Minuten bis zu einem Tag. Danach in Netlify unte
 
 ## Vor dem Livegang noch offen
 
-- Datenschutzerklärung (`public/datenschutz/index.html`): Netlify als Hoster, Resend als Mailversand, beide Formulare inkl. Lebenslauf, keine Cookies, keine externen Schriften
+- Datenschutzerklärung steht (Stand November 2026). Vor dem Livegang einmal mit einem Generator wie eRecht24 abgleichen oder prüfen lassen, und die Auftragsverarbeitungsverträge bei Netlify und Resend wirklich abschließen
 - Impressum: Festnetznummer und USt-IdNr. (Platzhalter in allen vier HTML-Dateien, Fußzeile)
 - Stellenanzeige von Günter, danach Auswahl im Bewerbungsformular anpassen
 - Kundenstimmen (Platzhalter auf der Startseite)
