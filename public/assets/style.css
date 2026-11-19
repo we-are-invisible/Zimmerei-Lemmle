@@ -482,6 +482,14 @@ legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)
 .dateien button:hover{color:var(--text-hell)}
 .ungueltig .ablage{border-color:var(--fehler)}
 .ungueltig .wahl label{box-shadow:inset 0 0 0 1px var(--fehler)}
+/* Stellenanzeige auf /jobs/ */
+.jobs .anfrage-intro{position:static}
+.stelle{margin-top:34px;padding-top:28px;border-top:1px solid var(--linie-hell)}
+.stelle .stelle-titel{margin:0;font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:clamp(21px,2vw,25px);line-height:1.2;color:var(--text-hell)}
+.stelle-meta{margin:8px 0 0!important;font-family:var(--f-display);font-size:14px;letter-spacing:.02em;color:var(--text-hell-2)!important}
+.stelle h3{margin:28px 0 10px;font-family:var(--f-display);font-weight:600;font-size:16px;color:var(--laerche)}
+.stelle ul{margin:0;padding-left:20px;display:grid;gap:7px;font-size:16.5px;line-height:1.5;color:var(--text-hell-2)}
+.stelle li::marker{color:var(--laerche)}
 .ueber .jobhinweis{margin:26px 0 0;font-family:var(--f-display);font-size:15px;color:var(--text-dunkel-2)}
 .ueber .jobhinweis .textlink{color:var(--text-dunkel);margin-left:6px}
 .ueber .jobhinweis .textlink::after{background:var(--laerche-tief)}
