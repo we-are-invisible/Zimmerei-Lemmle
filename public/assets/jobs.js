@@ -95,6 +95,14 @@
     zone.addEventListener('drop', function(e){ if (e.dataTransfer && e.dataTransfer.files.length) nimm(e.dataTransfer.files); });
     return st;
   }
+  /* Mitlaufendes Formular: Abstand oben so wählen, dass auch das Ende des Formulars ins Fenster passt */
+  var bSpalte = document.querySelector('.bewerbung-spalte'), kopfEl = document.querySelector('.kopf');
+  function klebOrt(){
+    var oben = kopfEl.offsetHeight + 24;
+    bSpalte.style.setProperty('--klebt', Math.min(oben, window.innerHeight - bSpalte.offsetHeight - 24) + 'px');
+  }
+  if ('ResizeObserver' in window) new ResizeObserver(klebOrt).observe(bSpalte);
+  window.addEventListener('resize', klebOrt); klebOrt();
   var lebenslauf = ablage('b-f-lebenslauf', false);
   var zeugnisse = ablage('b-f-zeugnisse', true);
   function wert(id){ return document.getElementById(id).value.trim(); }

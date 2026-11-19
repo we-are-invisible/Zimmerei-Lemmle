@@ -161,6 +161,17 @@ a{color:inherit}
 .nav .knopf{--pl:18px;--pr:16px;--pw:15px;--gap:10px;padding:12px var(--pr) 12px var(--pl);font-size:13px}
 @media (max-width:1000px){.nav{gap:22px}}
 @media (max-width:900px){.nav>a:not(.knopf){display:none}}
+/* Menü für kleine Bildschirme: ohne JavaScript bedienbar, mit Skript nur zum Schließen */
+.menue{display:none;position:relative}
+.menue summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border-radius:var(--r);box-shadow:inset 0 0 0 1px var(--linie-hell);font-family:var(--f-display);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-hell);transition:background-color .25s}
+.menue summary::-webkit-details-marker{display:none}
+.menue summary:hover,.menue[open] summary{background:var(--eiche-2)}
+.menue .mi{display:block;width:16px;height:2px;background:currentColor;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor}
+.menue-liste{position:absolute;right:0;top:calc(100% + 14px);z-index:60;min-width:230px;display:grid;padding:8px;background:var(--eiche-2);border:1px solid var(--linie-hell);border-radius:var(--r);box-shadow:0 24px 40px -20px rgba(0,0,0,.8)}
+.menue-liste a{padding:14px;font-family:var(--f-display);font-size:16px;text-decoration:none;color:var(--text-hell);border-radius:var(--r)}
+.menue-liste a:hover,.menue-liste a:focus-visible{background:var(--eiche-3)}
+@media (max-width:900px){.menue{display:block}}
+@media (max-width:440px){.kopf .innen{gap:10px}.nav{gap:10px}.marke{gap:9px}.marke img{width:38px;height:38px}.marke b{width:min-content;font-size:13.5px}.menue .mt{display:none}.nav .knopf{--pl:14px;--pr:12px;--pw:13px;--gap:8px;font-size:12px}}
 @media (max-width:440px){.marke small{display:none}.nav .knopf .lang{display:none}}
 
 /* „Wir stellen ein“: klappt alle 10 Sekunden kurz unter dem Nav-Punkt Jobs aus (Test) */
@@ -168,7 +179,7 @@ a{color:inherit}
 .einstell{position:absolute;top:100%;left:var(--el,auto);right:var(--er,auto);z-index:2;pointer-events:none;transition:opacity .3s}
 .einstell.aus{opacity:0}
 .einstell.aus a{pointer-events:none}
-.einstell a{position:relative;display:inline-flex;align-items:center;gap:8px;margin-top:7px;padding:8px 12px;border-radius:var(--r);background:var(--laerche);color:var(--eiche);font-family:var(--f-display);font-weight:600;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;white-space:nowrap;pointer-events:auto;box-shadow:0 10px 24px -10px rgba(0,0,0,.7);visibility:hidden;animation:einstell 10s 1.5s var(--zug) infinite}
+.einstell a{position:relative;display:inline-flex;align-items:center;gap:8px;margin-top:7px;padding:8px 12px;border-radius:var(--r);background:var(--laerche);color:var(--eiche);font-family:var(--f-display);font-weight:600;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;white-space:nowrap;pointer-events:auto;box-shadow:0 10px 24px -10px rgba(0,0,0,.7);visibility:hidden;animation:einstell 10s 1.5s var(--zug) 3}
 .einstell a::before{content:"";position:absolute;top:-4px;left:var(--en,50%);width:10px;height:10px;margin-left:-5px;background:inherit;transform:rotate(45deg);border-radius:1px}
 .einstell a i{width:7px;height:7px;border-radius:50%;background:var(--eiche)}
 .einstell a:hover,.einstell a:focus-visible{animation-play-state:paused;background:var(--brett)}
@@ -217,7 +228,7 @@ a{color:inherit}
 }
 
 /* 2 · Weite: das Bild wächst beim Scrollen auf volle Breite */
-.weite{position:relative;height:250vh}
+.weite{position:relative;height:210vh}
 .weite-buehne{position:sticky;top:calc(var(--kopf) + env(safe-area-inset-top,0px));height:calc(100vh - var(--kopf) - env(safe-area-inset-top,0px));overflow:hidden}
 .weite-rahmen{position:absolute;inset:0;overflow:hidden;clip-path:inset(var(--iy,22%) var(--ix,30%) round var(--ir,3px));will-change:clip-path}
 .weite-rahmen img{width:100%;height:100%;object-fit:cover;transform:scale(var(--is,1.25));filter:brightness(var(--ib,.62));will-change:transform}
@@ -230,7 +241,7 @@ a{color:inherit}
 .weite-text p{margin:0;max-width:30ch;font-size:clamp(22px,2.4vw,32px);line-height:1.35;color:var(--text-hell)}
 .weite-text small{display:block;margin-top:14px;font-family:var(--f-display);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-hell-2)}
 @media (max-width:700px){
-  .weite{height:220vh}
+  .weite{height:190vh}
   .weite-worte{flex-direction:column;gap:0}
   .weite-worte span{font-size:clamp(26px,8.4vw,44px)}
   .weite-worte .wl,.weite-worte .wr{flex:none;padding:0;text-align:center}
@@ -277,7 +288,7 @@ a{color:inherit}
 .nachsatz p{margin:0;font-size:19px;max-width:44ch}
 
 /* 4 · Projektstapel, dunkel */
-.stapel-sektion{position:relative;height:calc(100vh + 5 * 75vh)}
+.stapel-sektion{position:relative;height:calc(100vh + 4 * 55vh)}
 .stapel-buehne{position:sticky;top:calc(var(--kopf) + env(safe-area-inset-top,0px));height:calc(100vh - var(--kopf) - env(safe-area-inset-top,0px));overflow:hidden;display:flex;flex-direction:column}
 .stapel-kopf{display:flex;justify-content:space-between;align-items:end;gap:24px;padding-block:32px 22px}
 .stapel-kopf h2{font-size:clamp(32px,4.2vw,56px)}
@@ -482,6 +493,16 @@ legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)
 .dateien button:hover{color:var(--text-hell)}
 .ungueltig .ablage{border-color:var(--fehler)}
 .ungueltig .wahl label{box-shadow:inset 0 0 0 1px var(--fehler)}
+/* Stellenanzeige auf /jobs/ */
+.jobs .anfrage-intro{position:static}
+/* Bewerbungsformular wandert beim Lesen der Stellenanzeige mit. Ist es höher als das Fenster, scrollt es erst bis zu seinem Ende und bleibt dann stehen, damit jedes Feld erreichbar bleibt. */
+@media (min-width:961px){.bewerbung-spalte{position:sticky;top:var(--klebt,calc(var(--kopf) + 24px))}}
+.stelle{margin-top:34px;padding-top:28px;border-top:1px solid var(--linie-hell)}
+.stelle .stelle-titel{margin:0;font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:clamp(21px,2vw,25px);line-height:1.2;color:var(--text-hell)}
+.stelle-meta{margin:8px 0 0!important;font-family:var(--f-display);font-size:14px;letter-spacing:.02em;color:var(--text-hell-2)!important}
+.stelle h3{margin:28px 0 10px;font-family:var(--f-display);font-weight:600;font-size:16px;color:var(--laerche)}
+.stelle ul{margin:0;padding-left:20px;display:grid;gap:7px;font-size:16.5px;line-height:1.5;color:var(--text-hell-2)}
+.stelle li::marker{color:var(--laerche)}
 .ueber .jobhinweis{margin:26px 0 0;font-family:var(--f-display);font-size:15px;color:var(--text-dunkel-2)}
 .ueber .jobhinweis .textlink{color:var(--text-dunkel);margin-left:6px}
 .ueber .jobhinweis .textlink::after{background:var(--laerche-tief)}
@@ -695,3 +716,8 @@ main[hidden]{display:none}
 .textseite{padding-block:56px 100px}
 .textseite h1{font-size:clamp(32px,4vw,52px);margin-bottom:28px}
 .textseite p{max-width:62ch}
+.textseite h2{margin:52px 0 14px;font-family:var(--f-display);font-stretch:112%;font-weight:700;font-size:clamp(20px,1.8vw,24px);line-height:1.2;max-width:40ch}
+.textseite p{margin:0 0 16px}
+.textseite a{text-underline-offset:3px;text-decoration-color:var(--laerche-tief)}
+.ds-lead{font-size:20px;line-height:1.55}
+.ds-stand{margin-top:48px!important;font-family:var(--f-display);font-size:14px;color:var(--text-dunkel-2)}
